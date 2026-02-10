@@ -1,16 +1,53 @@
 # XAUUSD Historical Data Fetcher
 
-Python Script สำหรับดึงข้อมูล Historical Data ของ XAUUSD จาก MetaTrader 5 เพื่อใช้ในการเทรน AI/ML Models
+Python Scripts สำหรับดึงข้อมูล Historical Data ของ XAUUSD จาก MetaTrader 5 เพื่อใช้ในการเทรน AI/ML Models
 
-## ✨ Features
+## 🎯 Available Scripts
+
+### 1. **Multi-Timeframe Fetcher** ⭐ (แนะนำสำหรับ AI Training)
+
+```bash
+python fetch_multi_timeframe.py
+```
+
+**Features:**
+- 📊 ดึง 3 Timeframes พร้อมกัน: **H4 (Trend)** + **H1 (Structure)** + **M15 (Entry)**
+- 🎯 เป้าหมาย: H4/H1 = 10+ ปี, M15 = 5+ ปี
+- 🔄 **Data Alignment**: ทุก timeframe มี timestamp ที่ตรงกัน
+- 🧠 **Combined Dataset**: AI มองเห็นทุก timeframe พร้อมกัน
+- 📁 Export ทั้ง Raw และ Processed data
+
+👉 [**อ่านคู่มือฉบับเต็ม: MULTI_TIMEFRAME_GUIDE.md**](MULTI_TIMEFRAME_GUIDE.md)
+
+### 2. Basic Fetcher (4 Timeframes)
+
+```bash
+python fetch_xauusd_data.py
+```
+
+**Features:**
+- 📊 ดึงข้อมูล 4 Timeframes: M1, M5, M15, H1
+- 📅 ดึงข้อมูลย้อนหลัง 3-5 ปี
+- 💾 บันทึกเป็น Parquet format แยกไฟล์
+
+### 3. Multi-Batch Fetcher (สำหรับ M1/M5)
+
+```bash
+python fetch_multi_batch.py
+```
+
+**Features:**
+- 🔄 ดึงข้อมูล M1/M5 มากกว่า 100k bars
+- 📦 แบ่งดึงเป็นช่วงๆ แล้วรวมกัน
+
+## ✨ Core Features (ทุก Scripts)
 
 - 🔌 เชื่อมต่อ MT5 Terminal อย่างปลอดภัย พร้อม Auto-disconnect
-- 📊 ดึงข้อมูล 4 Timeframes: M1, M5, M15, H1
-- 📅 **ดึงข้อมูลย้อนหลัง 3-5 ปี** (หรือมากที่สุดเท่าที่มี)
 - 🧹 Data Cleaning: แปลง timestamp, เลือก columns ที่สำคัญ
 - 💾 บันทึกเป็น Parquet format พร้อม Snappy compression
 - 📝 Logging ครบถ้วน: จำนวนแท่ง, ช่วงเวลา, ขนาดไฟล์
 - ⚠️ Error Handling แบบครอบคลุม พร้อม Fallback mechanism
+- 🪟 Windows-compatible: รองรับ Unicode encoding
 
 ## 📋 Requirements
 
