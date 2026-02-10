@@ -18,6 +18,12 @@ pip install -r requirements.txt
 python fetch_data.py
 ```
 
+### 4. เตรียมข้อมูลสำหรับเทรน AI
+
+```bash
+python prepare_for_training.py
+```
+
 เท่านี้เสร็จ! 🎉
 
 ---
@@ -32,28 +38,60 @@ python fetch_data.py
 ### Output Files
 
 ```
-data/                          # Raw data แยกตาม timeframe
+data/                                   # Raw data แยกตาม timeframe
 ├── XAUUSD_H4.parquet
 ├── XAUUSD_H1.parquet
 └── XAUUSD_M15.parquet
 
-processed_data/                # Aligned data พร้อมใช้
+processed_data/                         # Aligned data + Features
 ├── XAUUSD_H4_aligned.parquet
 ├── XAUUSD_H1_aligned.parquet
 ├── XAUUSD_M15_aligned.parquet
-└── XAUUSD_COMBINED.parquet    ⭐ ใช้ไฟล์นี้เทรน AI
+├── XAUUSD_COMBINED.parquet            (Multi-TF aligned)
+└── XAUUSD_READY_TO_TRAIN.parquet      ⭐ พร้อมเทรน RL (มี features ครบ)
 ```
+
+---
+
+## 🔧 Feature Engineering
+
+`prepare_for_training.py` จะสร้าง features ต่อไปนี้:
+
+### Features ที่เพิ่มเข้ามา:
+- **Log Returns**: `log_return_M15`, `log_return_H1`, `log_return_H4`
+- **RSI (14)**: `rsi_M15`, `rsi_H1`, `rsi_H4`
+- **ATR (14)**: `atr_M15`, `atr_H1` (วัดความผันผวน)
+- **MACD (12,26,9)**: `macd_*`, `macd_signal_*`, `macd_hist_*`
+- **Moving Averages**: `ma20_*`, `ma50_*`
+- **Price Change (%)**: `price_change_*`
+- **Other**: `body_ratio_*`, `dist_ma20_*`
+
+### Data Cleaning:
+- ✅ ลบ NaN จากการคำนวณ indicators
+- ✅ Clip outliers (5 std threshold)
+- ✅ พร้อมใช้กับ RL algorithms
 
 ---
 
 ## 💻 วิธีใช้งาน
 
-### โหลดข้อมูล
+### โหลดข้อมูลเทรน RL
 
 ```python
 import pandas as pd
 
-# โหลดข้อมูล multi-timeframe (แนะนำ)
+# โหลดข้อมูลพร้อม features (แนะนำ)
+df = pd.read_parquet('processed_data/XAUUSD_READY_TO_TRAIN.parquet')
+
+print(f"Rows: {len(df):,}")
+print(f"Features: {len(df.columns)}")
+print(df.columns.tolist())
+```
+
+### โหลดข้อมูลพื้นฐาน
+
+```python
+# โหลดข้อมูล multi-timeframe (ยังไม่มี features)
 df = pd.read_parquet('processed_data/XAUUSD_COMBINED.parquet')
 
 # หรือโหลดแยกตาม timeframe
@@ -62,39 +100,27 @@ df_h1 = pd.read_parquet('data/XAUUSD_H1.parquet')
 df_m15 = pd.read_parquet('data/XAUUSD_M15.parquet')
 ```
 
-### โครงสร้างข้อมูล COMBINED
-
-```python
-# แต่ละ row มีข้อมูลทุก timeframe พร้อมกัน
-print(df.columns)
-# ['time', 'open_M15', 'high_M15', 'low_M15', 'close_M15', ...,
-#  'open_H1', 'high_H1', 'low_H1', 'close_H1', ...,
-#  'open_H4', 'high_H4', 'low_H4', 'close_H4', ...]
-
-# AI มองเห็นทุก timeframe พร้อมกัน!
-print(df.tail())
-```
-
-### ตัวอย่าง: Multi-Timeframe Analysis
+### ตัวอย่าง: Multi-Timeframe Signal
 
 ```python
 import numpy as np
 
-# คำนวณ Moving Average ทุก TF
-df['ma20_M15'] = df['close_M15'].rolling(20).mean()
-df['ma20_H1'] = df['close_H1'].rolling(20).mean()
-df['ma20_H4'] = df['close_H4'].rolling(20).mean()
+# โหลดข้อมูลพร้อม features
+df = pd.read_parquet('processed_data/XAUUSD_READY_TO_TRAIN.parquet')
 
-# หา Trend แต่ละ TF
-df['trend_M15'] = np.where(df['close_M15'] > df['ma20_M15'], 'UP', 'DOWN')
-df['trend_H1'] = np.where(df['close_H1'] > df['ma20_H1'], 'UP', 'DOWN')
-df['trend_H4'] = np.where(df['close_H4'] > df['ma20_H4'], 'UP', 'DOWN')
+# หา Trend แต่ละ TF (ใช้ MA ที่คำนวณไว้แล้ว)
+df['trend_M15'] = np.where(df['close_M15'] > df['ma20_M15'], 1, -1)
+df['trend_H1'] = np.where(df['close_H1'] > df['ma20_H1'], 1, -1)
+df['trend_H4'] = np.where(df['close_H4'] > df['ma20_H4'], 1, -1)
 
-# Signal เมื่อทุก TF align กัน
-df['all_aligned'] = (
+# Signal เมื่อ TF align + RSI confirm
+df['strong_signal'] = (
     (df['trend_M15'] == df['trend_H1']) & 
-    (df['trend_H1'] == df['trend_H4'])
+    (df['trend_H1'] == df['trend_H4']) &
+    ((df['rsi_M15'] < 30) | (df['rsi_M15'] > 70))  # RSI extreme
 )
+
+print(f"Strong signals: {df['strong_signal'].sum()}")
 ```
 
 ---

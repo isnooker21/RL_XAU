@@ -1,6 +1,10 @@
 # Core dependencies
 pandas>=2.0.0
 pyarrow>=12.0.0
+numpy>=1.24.0
+
+# Technical indicators
+pandas_ta>=0.3.14b0
 
 # MetaTrader5 - Windows Only
 # For macOS/Linux: Use Windows VM, Wine, or remote Windows machine
