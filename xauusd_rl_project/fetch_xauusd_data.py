@@ -15,16 +15,33 @@ import logging
 from pathlib import Path
 from typing import Optional, Dict, List
 
-# Configure logging
+# Configure logging with UTF-8 encoding for Windows compatibility
+import sys
+
+# Create file handler with UTF-8 encoding
+file_handler = logging.FileHandler('xauusd_data_fetch.log', encoding='utf-8')
+file_handler.setLevel(logging.INFO)
+file_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+
+# Create console handler with UTF-8 encoding (Windows compatible)
+console_handler = logging.StreamHandler(sys.stdout)
+console_handler.setLevel(logging.INFO)
+console_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+
+# Configure root logger
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('xauusd_data_fetch.log'),
-        logging.StreamHandler()
-    ]
+    handlers=[file_handler, console_handler]
 )
 logger = logging.getLogger(__name__)
+
+# Set UTF-8 encoding for Windows console if needed
+if sys.platform == 'win32':
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except AttributeError:
+        import io
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 
 class MT5DataFetcher:
@@ -156,7 +173,7 @@ class MT5DataFetcher:
             actual_years = actual_days / 365.25
             
             # Log statistics
-            logger.info(f"✓ {timeframe_key}: Fetched {len(df):,} bars")
+            logger.info(f"[SUCCESS] {timeframe_key}: Fetched {len(df):,} bars")
             logger.info(f"  Actual range: {df['time'].min()} to {df['time'].max()}")
             logger.info(f"  Time span: {actual_days:,} days ({actual_years:.2f} years)")
             logger.info(f"  Memory usage: {df.memory_usage(deep=True).sum() / 1024 / 1024:.2f} MB")
@@ -193,7 +210,7 @@ class MT5DataFetcher:
             )
             
             file_size = filename.stat().st_size / 1024 / 1024
-            logger.info(f"✓ Saved to {filename} ({file_size:.2f} MB)")
+            logger.info(f"[SAVED] {filename} ({file_size:.2f} MB)")
             return True
             
         except Exception as e:
@@ -272,7 +289,7 @@ def main():
             total_count = len(results)
             
             for timeframe, success in results.items():
-                status = "✓ SUCCESS" if success else "✗ FAILED"
+                status = "[SUCCESS]" if success else "[FAILED]"
                 logger.info(f"{timeframe:6s}: {status}")
             
             logger.info("-" * 60)
