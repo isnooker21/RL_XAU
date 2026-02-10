@@ -1,0 +1,214 @@
+2026-02-11 02:45:47,191 - INFO - Connected to MT5 Terminal
+2026-02-11 02:45:47,357 - INFO - Account: 9005070: Wisarut Ausavasharanon
+2026-02-11 02:45:47,527 - INFO - Server: WeTrade-MT5
+2026-02-11 02:45:47,647 - INFO - Balance: 2.25 USD
+2026-02-11 02:45:47,669 - ERROR - Symbol XAUUSD not found
+2026-02-11 02:45:47,768 - ERROR - Failed to connect to MT5. Exiting.
+2026-02-11 02:45:47,998 - INFO - Script execution completed
+2026-02-11 02:46:17,583 - INFO - Connected to MT5 Terminal
+2026-02-11 02:46:17,584 - INFO - Account: 9005070: Wisarut Ausavasharanon
+2026-02-11 02:46:17,584 - INFO - Server: WeTrade-MT5
+2026-02-11 02:46:17,585 - INFO - Balance: 2.25 USD
+2026-02-11 02:46:17,585 - ERROR - Symbol XAUUSD not found
+2026-02-11 02:46:17,585 - ERROR - Failed to connect to MT5. Exiting.
+2026-02-11 02:46:17,585 - INFO - Script execution completed
+2026-02-11 02:46:40,155 - INFO - Connected to MT5 Terminal
+2026-02-11 02:46:40,155 - INFO - Account: 9005070: Wisarut Ausavasharanon
+2026-02-11 02:46:40,156 - INFO - Server: WeTrade-MT5
+2026-02-11 02:46:40,156 - INFO - Balance: 2.25 USD
+2026-02-11 02:46:40,157 - INFO - Symbol XAUUSD.s is ready
+2026-02-11 02:46:40,157 - INFO - ============================================================
+2026-02-11 02:46:40,158 - INFO - Starting XAUUSD Historical Data Download
+2026-02-11 02:46:40,158 - INFO - Target: 5 years of historical data
+2026-02-11 02:46:40,159 - INFO - ============================================================
+2026-02-11 02:46:40,159 - INFO - Fetching M1 data for XAUUSD.s...
+2026-02-11 02:46:40,160 - INFO -   Requested range: 2021-02-12 to 2026-02-11 (5 years)
+2026-02-11 02:46:41,754 - INFO -   Actual range: 2025-10-28 21:05:00 to 2026-02-10 19:46:00
+2026-02-11 02:46:41,799 - INFO -   Time span: 104 days (0.28 years)
+2026-02-11 02:46:41,806 - INFO -   Memory usage: 5.72 MB
+2026-02-11 02:46:41,818 - ERROR - Error saving M1 to parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2026-02-11 02:46:41,835 - INFO - ------------------------------------------------------------
+2026-02-11 02:46:42,170 - INFO - Fetching M5 data for XAUUSD.s...
+2026-02-11 02:46:42,179 - INFO -   Requested range: 2021-02-12 to 2026-02-11 (5 years)
+2026-02-11 02:46:48,202 - INFO -   Actual range: 2024-09-11 10:50:00 to 2026-02-10 19:45:00
+2026-02-11 02:46:48,204 - INFO -   Time span: 517 days (1.42 years)
+2026-02-11 02:46:48,328 - INFO -   Memory usage: 5.72 MB
+2026-02-11 02:46:48,584 - ERROR - Error saving M5 to parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2026-02-11 02:46:48,586 - INFO - ------------------------------------------------------------
+2026-02-11 02:46:48,586 - INFO - Fetching M15 data for XAUUSD.s...
+2026-02-11 02:46:48,587 - INFO -   Requested range: 2021-02-12 to 2026-02-11 (5 years)
+2026-02-11 02:47:06,398 - INFO -   Actual range: 2021-11-18 16:00:00 to 2026-02-10 19:45:00
+2026-02-11 02:47:06,402 - INFO -   Time span: 1,545 days (4.23 years)
+2026-02-11 02:47:06,408 - INFO -   Memory usage: 5.72 MB
+2026-02-11 02:47:06,429 - ERROR - Error saving M15 to parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2026-02-11 02:47:06,557 - INFO - ------------------------------------------------------------
+2026-02-11 02:47:06,558 - INFO - Fetching H1 data for XAUUSD.s...
+2026-02-11 02:47:06,983 - INFO -   Requested range: 2021-02-12 to 2026-02-11 (5 years)
+2026-02-11 02:47:13,088 - INFO -   Actual range: 2021-02-11 20:00:00 to 2026-02-10 19:00:00
+2026-02-11 02:47:13,367 - INFO -   Time span: 1,824 days (4.99 years)
+2026-02-11 02:47:13,405 - INFO -   Memory usage: 1.71 MB
+2026-02-11 02:47:13,652 - ERROR - Error saving H1 to parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2026-02-11 02:47:13,672 - INFO - ------------------------------------------------------------
+2026-02-11 02:47:13,677 - INFO - ============================================================
+2026-02-11 02:47:13,678 - INFO - DOWNLOAD SUMMARY
+2026-02-11 02:47:13,679 - INFO - ============================================================
+2026-02-11 02:47:14,829 - INFO - ------------------------------------------------------------
+2026-02-11 02:47:14,829 - INFO - Completed: 0/4 timeframes
+2026-02-11 02:47:14,835 - INFO - ============================================================
+2026-02-11 02:47:14,837 - WARNING - Some timeframes failed. Please check the logs.
+2026-02-11 02:47:14,838 - INFO - MT5 connection closed
+2026-02-11 02:47:14,931 - INFO - Script execution completed
+2026-02-11 02:52:48,917 - INFO - Connected to MT5 Terminal
+2026-02-11 02:52:48,920 - INFO - Account: 9005070: Wisarut Ausavasharanon
+2026-02-11 02:52:48,923 - INFO - Server: WeTrade-MT5
+2026-02-11 02:52:48,934 - INFO - Balance: 2.25 USD
+2026-02-11 02:52:48,937 - INFO - Symbol XAUUSD.s is ready
+2026-02-11 02:52:48,940 - INFO - ============================================================
+2026-02-11 02:52:49,099 - INFO - Starting XAUUSD Historical Data Download
+2026-02-11 02:52:49,101 - INFO - Target: 5 years of historical data
+2026-02-11 02:52:49,568 - INFO - ============================================================
+2026-02-11 02:52:49,571 - INFO - Fetching M1 data for XAUUSD.s...
+2026-02-11 02:52:49,729 - INFO -   Requested range: 2021-02-12 to 2026-02-11 (5 years)
+2026-02-11 02:52:51,923 - INFO -   Actual range: 2025-10-28 21:11:00 to 2026-02-10 19:52:00
+2026-02-11 02:52:51,931 - INFO -   Time span: 104 days (0.28 years)
+2026-02-11 02:52:52,183 - INFO -   Memory usage: 5.72 MB
+2026-02-11 02:52:52,253 - ERROR - Error saving M1 to parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2026-02-11 02:52:52,359 - INFO - ------------------------------------------------------------
+2026-02-11 02:52:52,360 - INFO - Fetching M5 data for XAUUSD.s...
+2026-02-11 02:52:52,362 - INFO -   Requested range: 2021-02-12 to 2026-02-11 (5 years)
+2026-02-11 02:52:53,925 - INFO -   Actual range: 2024-09-11 10:55:00 to 2026-02-10 19:50:00
+2026-02-11 02:52:54,066 - INFO -   Time span: 517 days (1.42 years)
+2026-02-11 02:52:54,069 - INFO -   Memory usage: 5.72 MB
+2026-02-11 02:52:54,073 - ERROR - Error saving M5 to parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2026-02-11 02:52:54,075 - INFO - ------------------------------------------------------------
+2026-02-11 02:52:54,076 - INFO - Fetching M15 data for XAUUSD.s...
+2026-02-11 02:52:54,076 - INFO -   Requested range: 2021-02-12 to 2026-02-11 (5 years)
+2026-02-11 02:52:56,736 - INFO -   Actual range: 2021-11-18 16:00:00 to 2026-02-10 19:45:00
+2026-02-11 02:52:56,747 - INFO -   Time span: 1,545 days (4.23 years)
+2026-02-11 02:52:56,754 - INFO -   Memory usage: 5.72 MB
+2026-02-11 02:52:57,004 - ERROR - Error saving M15 to parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2026-02-11 02:52:57,131 - INFO - ------------------------------------------------------------
+2026-02-11 02:52:57,132 - INFO - Fetching H1 data for XAUUSD.s...
+2026-02-11 02:52:57,133 - INFO -   Requested range: 2021-02-12 to 2026-02-11 (5 years)
+2026-02-11 02:52:58,044 - INFO -   Actual range: 2021-02-11 20:00:00 to 2026-02-10 19:00:00
+2026-02-11 02:52:58,047 - INFO -   Time span: 1,824 days (4.99 years)
+2026-02-11 02:52:58,062 - INFO -   Memory usage: 1.71 MB
+2026-02-11 02:52:58,147 - ERROR - Error saving H1 to parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2026-02-11 02:52:58,445 - INFO - ------------------------------------------------------------
+2026-02-11 02:52:58,470 - INFO - ============================================================
+2026-02-11 02:52:58,545 - INFO - DOWNLOAD SUMMARY
+2026-02-11 02:52:58,547 - INFO - ============================================================
+2026-02-11 02:52:58,891 - INFO - ------------------------------------------------------------
+2026-02-11 02:52:58,892 - INFO - Completed: 0/4 timeframes
+2026-02-11 02:52:58,898 - INFO - ============================================================
+2026-02-11 02:52:58,900 - WARNING - Some timeframes failed. Please check the logs.
+2026-02-11 02:52:58,973 - INFO - MT5 connection closed
+2026-02-11 02:52:58,974 - INFO - Script execution completed
+2026-02-11 02:56:11,175 - INFO - Connected to MT5 Terminal
+2026-02-11 02:56:11,206 - INFO - Account: 9005070: Wisarut Ausavasharanon
+2026-02-11 02:56:11,212 - INFO - Server: WeTrade-MT5
+2026-02-11 02:56:11,213 - INFO - Balance: 2.25 USD
+2026-02-11 02:56:11,213 - INFO - Symbol XAUUSD.s is ready
+2026-02-11 02:56:11,216 - INFO - ============================================================
+2026-02-11 02:56:11,310 - INFO - Starting XAUUSD Historical Data Download
+2026-02-11 02:56:11,312 - INFO - Target: 5 years of historical data
+2026-02-11 02:56:11,313 - INFO - ============================================================
+2026-02-11 02:56:11,313 - INFO - Fetching M1 data for XAUUSD.s...
+2026-02-11 02:56:11,314 - INFO -   Requested range: 2021-02-12 to 2026-02-11 (5 years)
+2026-02-11 02:56:11,435 - INFO - [SUCCESS] M1: Fetched 99,884 bars
+2026-02-11 02:56:11,445 - INFO -   Actual range: 2025-10-28 21:11:00 to 2026-02-10 19:56:00
+2026-02-11 02:56:11,451 - INFO -   Time span: 104 days (0.28 years)
+2026-02-11 02:56:11,455 - INFO -   Memory usage: 5.72 MB
+2026-02-11 02:56:11,461 - ERROR - Error saving M1 to parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2026-02-11 02:56:11,570 - INFO - ------------------------------------------------------------
+2026-02-11 02:56:11,586 - INFO - Fetching M5 data for XAUUSD.s...
+2026-02-11 02:56:11,588 - INFO -   Requested range: 2021-02-12 to 2026-02-11 (5 years)
+2026-02-11 02:56:11,967 - INFO - [SUCCESS] M5: Fetched 99,977 bars
+2026-02-11 02:56:12,079 - INFO -   Actual range: 2024-09-11 10:55:00 to 2026-02-10 19:55:00
+2026-02-11 02:56:12,116 - INFO -   Time span: 517 days (1.42 years)
+2026-02-11 02:56:12,119 - INFO -   Memory usage: 5.72 MB
+2026-02-11 02:56:12,124 - ERROR - Error saving M5 to parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2026-02-11 02:56:12,332 - INFO - ------------------------------------------------------------
+2026-02-11 02:56:12,333 - INFO - Fetching M15 data for XAUUSD.s...
+2026-02-11 02:56:12,334 - INFO -   Requested range: 2021-02-12 to 2026-02-11 (5 years)
+2026-02-11 02:56:12,610 - INFO - [SUCCESS] M15: Fetched 99,992 bars
+2026-02-11 02:56:12,780 - INFO -   Actual range: 2021-11-18 16:00:00 to 2026-02-10 19:45:00
+2026-02-11 02:56:12,802 - INFO -   Time span: 1,545 days (4.23 years)
+2026-02-11 02:56:12,812 - INFO -   Memory usage: 5.72 MB
+2026-02-11 02:56:13,198 - ERROR - Error saving M15 to parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2026-02-11 02:56:13,214 - INFO - ------------------------------------------------------------
+2026-02-11 02:56:13,215 - INFO - Fetching H1 data for XAUUSD.s...
+2026-02-11 02:56:13,216 - INFO -   Requested range: 2021-02-12 to 2026-02-11 (5 years)
+2026-02-11 02:56:13,337 - INFO - [SUCCESS] H1: Fetched 29,934 bars
+2026-02-11 02:56:13,339 - INFO -   Actual range: 2021-02-11 20:00:00 to 2026-02-10 19:00:00
+2026-02-11 02:56:13,339 - INFO -   Time span: 1,824 days (4.99 years)
+2026-02-11 02:56:13,341 - INFO -   Memory usage: 1.71 MB
+2026-02-11 02:56:13,359 - ERROR - Error saving H1 to parquet: Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+2026-02-11 02:56:13,360 - INFO - ------------------------------------------------------------
+2026-02-11 02:56:13,361 - INFO - ============================================================
+2026-02-11 02:56:13,361 - INFO - DOWNLOAD SUMMARY
+2026-02-11 02:56:13,362 - INFO - ============================================================
+2026-02-11 02:56:13,362 - INFO - M1    : [FAILED]
+2026-02-11 02:56:13,363 - INFO - M5    : [FAILED]
+2026-02-11 02:56:13,363 - INFO - M15   : [FAILED]
+2026-02-11 02:56:13,364 - INFO - H1    : [FAILED]
+2026-02-11 02:56:13,364 - INFO - ------------------------------------------------------------
+2026-02-11 02:56:13,364 - INFO - Completed: 0/4 timeframes
+2026-02-11 02:56:13,369 - INFO - ============================================================
+2026-02-11 02:56:13,371 - WARNING - Some timeframes failed. Please check the logs.
+2026-02-11 02:56:13,372 - INFO - MT5 connection closed
+2026-02-11 02:56:13,379 - INFO - Script execution completed
+2026-02-11 02:57:24,703 - INFO - Connected to MT5 Terminal
+2026-02-11 02:57:24,704 - INFO - Account: 9005070: Wisarut Ausavasharanon
+2026-02-11 02:57:24,705 - INFO - Server: WeTrade-MT5
+2026-02-11 02:57:24,705 - INFO - Balance: 2.25 USD
+2026-02-11 02:57:24,706 - INFO - Symbol XAUUSD.s is ready
+2026-02-11 02:57:24,707 - INFO - ============================================================
+2026-02-11 02:57:24,707 - INFO - Starting XAUUSD Historical Data Download
+2026-02-11 02:57:24,708 - INFO - Target: 5 years of historical data
+2026-02-11 02:57:24,708 - INFO - ============================================================
+2026-02-11 02:57:24,709 - INFO - Fetching M1 data for XAUUSD.s...
+2026-02-11 02:57:24,712 - INFO -   Requested range: 2021-02-12 to 2026-02-11 (5 years)
+2026-02-11 02:57:24,797 - INFO - [SUCCESS] M1: Fetched 99,885 bars
+2026-02-11 02:57:25,091 - INFO -   Actual range: 2025-10-28 21:11:00 to 2026-02-10 19:57:00
+2026-02-11 02:57:25,092 - INFO -   Time span: 104 days (0.28 years)
+2026-02-11 02:57:25,122 - INFO -   Memory usage: 5.72 MB
+2026-02-11 02:57:25,744 - INFO - [SAVED] data\XAUUSD.s_M1.parquet (2.76 MB)
+2026-02-11 02:57:25,745 - INFO - ------------------------------------------------------------
+2026-02-11 02:57:25,746 - INFO - Fetching M5 data for XAUUSD.s...
+2026-02-11 02:57:25,746 - INFO -   Requested range: 2021-02-12 to 2026-02-11 (5 years)
+2026-02-11 02:57:25,795 - INFO - [SUCCESS] M5: Fetched 99,977 bars
+2026-02-11 02:57:25,857 - INFO -   Actual range: 2024-09-11 10:55:00 to 2026-02-10 19:55:00
+2026-02-11 02:57:25,858 - INFO -   Time span: 517 days (1.42 years)
+2026-02-11 02:57:25,860 - INFO -   Memory usage: 5.72 MB
+2026-02-11 02:57:26,665 - INFO - [SAVED] data\XAUUSD.s_M5.parquet (3.12 MB)
+2026-02-11 02:57:26,666 - INFO - ------------------------------------------------------------
+2026-02-11 02:57:26,667 - INFO - Fetching M15 data for XAUUSD.s...
+2026-02-11 02:57:26,668 - INFO -   Requested range: 2021-02-12 to 2026-02-11 (5 years)
+2026-02-11 02:57:26,752 - INFO - [SUCCESS] M15: Fetched 99,992 bars
+2026-02-11 02:57:26,874 - INFO -   Actual range: 2021-11-18 16:00:00 to 2026-02-10 19:45:00
+2026-02-11 02:57:26,887 - INFO -   Time span: 1,545 days (4.23 years)
+2026-02-11 02:57:26,904 - INFO -   Memory usage: 5.72 MB
+2026-02-11 02:57:27,582 - INFO - [SAVED] data\XAUUSD.s_M15.parquet (3.38 MB)
+2026-02-11 02:57:27,585 - INFO - ------------------------------------------------------------
+2026-02-11 02:57:27,586 - INFO - Fetching H1 data for XAUUSD.s...
+2026-02-11 02:57:27,587 - INFO -   Requested range: 2021-02-12 to 2026-02-11 (5 years)
+2026-02-11 02:57:27,625 - INFO - [SUCCESS] H1: Fetched 29,934 bars
+2026-02-11 02:57:27,697 - INFO -   Actual range: 2021-02-11 20:00:00 to 2026-02-10 19:00:00
+2026-02-11 02:57:27,701 - INFO -   Time span: 1,824 days (4.99 years)
+2026-02-11 02:57:27,705 - INFO -   Memory usage: 1.71 MB
+2026-02-11 02:57:27,846 - INFO - [SAVED] data\XAUUSD.s_H1.parquet (1.19 MB)
+2026-02-11 02:57:27,847 - INFO - ------------------------------------------------------------
+2026-02-11 02:57:27,848 - INFO - ============================================================
+2026-02-11 02:57:27,851 - INFO - DOWNLOAD SUMMARY
+2026-02-11 02:57:27,851 - INFO - ============================================================
+2026-02-11 02:57:27,852 - INFO - M1    : [SUCCESS]
+2026-02-11 02:57:27,852 - INFO - M5    : [SUCCESS]
+2026-02-11 02:57:27,853 - INFO - M15   : [SUCCESS]
+2026-02-11 02:57:27,855 - INFO - H1    : [SUCCESS]
+2026-02-11 02:57:27,856 - INFO - ------------------------------------------------------------
+2026-02-11 02:57:27,856 - INFO - Completed: 4/4 timeframes
+2026-02-11 02:57:27,857 - INFO - ============================================================
+2026-02-11 02:57:27,857 - INFO - All data fetched successfully! Ready for AI training.
+2026-02-11 02:57:27,858 - INFO - MT5 connection closed
+2026-02-11 02:57:27,858 - INFO - Script execution completed

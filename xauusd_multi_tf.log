@@ -1,0 +1,68 @@
+2026-02-11 03:13:40,653 - INFO - Connected to MT5 Terminal
+2026-02-11 03:13:40,654 - INFO - Account: 9005070: Wisarut Ausavasharanon
+2026-02-11 03:13:40,655 - INFO - Server: WeTrade-MT5
+2026-02-11 03:13:40,657 - INFO - Symbol detected: XAUUSD.s
+2026-02-11 03:13:40,657 - INFO - ============================================================
+2026-02-11 03:13:40,658 - INFO - MULTI-TIMEFRAME DATA FETCHER
+2026-02-11 03:13:40,659 - INFO - Strategy: H4 (Trend) + H1 (Structure) + M15 (Entry)
+2026-02-11 03:13:40,660 - INFO - ============================================================
+2026-02-11 03:13:40,665 - INFO - [H4] Fetching data (Trend Analysis)...
+2026-02-11 03:13:40,987 - INFO - [H4] Target: 10 years
+2026-02-11 03:14:03,414 - INFO - [SUCCESS] H4: 15,438 bars
+2026-02-11 03:14:03,416 - INFO -   Range: 2016-02-15 00:00:00 to 2026-02-10 20:00:00
+2026-02-11 03:14:03,417 - INFO -   Span: 3,648 days (9.99 years)
+2026-02-11 03:14:03,421 - INFO -   Memory: 0.88 MB
+2026-02-11 03:14:03,891 - INFO - [SAVED] data\XAUUSD.s_H4.parquet (0.66 MB)
+2026-02-11 03:14:03,894 - INFO - ------------------------------------------------------------
+2026-02-11 03:14:03,895 - INFO - [H1] Fetching data (Market Structure)...
+2026-02-11 03:14:03,896 - INFO - [H1] Target: 10 years
+2026-02-11 03:14:05,104 - INFO - [SUCCESS] H1: 60,210 bars
+2026-02-11 03:14:05,106 - INFO -   Range: 2016-02-15 01:00:00 to 2026-02-10 20:00:00
+2026-02-11 03:14:05,106 - INFO -   Span: 3,648 days (9.99 years)
+2026-02-11 03:14:05,109 - INFO -   Memory: 3.45 MB
+2026-02-11 03:14:05,320 - INFO - [SAVED] data\XAUUSD.s_H1.parquet (2.27 MB)
+2026-02-11 03:14:05,433 - INFO - ------------------------------------------------------------
+2026-02-11 03:14:05,856 - INFO - [M15] Fetching data (Entry Points)...
+2026-02-11 03:14:06,123 - INFO - [M15] Target: 5 years
+2026-02-11 03:14:06,861 - INFO - [SUCCESS] M15: 99,992 bars
+2026-02-11 03:14:06,863 - INFO -   Range: 2021-11-18 16:15:00 to 2026-02-10 20:00:00
+2026-02-11 03:14:06,863 - INFO -   Span: 1,545 days (4.23 years)
+2026-02-11 03:14:06,866 - INFO -   Memory: 5.72 MB
+2026-02-11 03:14:07,632 - INFO - [SAVED] data\XAUUSD.s_M15.parquet (3.38 MB)
+2026-02-11 03:14:07,669 - INFO - ------------------------------------------------------------
+2026-02-11 03:14:07,669 - INFO - ============================================================
+2026-02-11 03:14:07,670 - INFO - ALIGNING TIMEFRAMES
+2026-02-11 03:14:07,670 - INFO - ============================================================
+2026-02-11 03:14:07,686 - INFO - Common date range: 2021-11-18 16:15:00 to 2026-02-10 20:00:00
+2026-02-11 03:14:07,839 - INFO - [H4] After filtering: 6,536 bars
+2026-02-11 03:14:07,856 - INFO - [H1] After filtering: 25,192 bars
+2026-02-11 03:14:07,971 - INFO - [M15] After filtering: 99,992 bars
+2026-02-11 03:14:07,973 - INFO - Using M15 as base: 99,992 timestamps
+2026-02-11 03:14:08,173 - INFO - [H4] Aligned to M15: 99,992 rows
+2026-02-11 03:14:08,301 - INFO - [H1] Aligned to M15: 99,992 rows
+2026-02-11 03:14:08,311 - INFO - Creating combined multi-timeframe dataset...
+2026-02-11 03:14:08,700 - INFO - [COMBINED] Dataset created: 99,992 rows, 22 columns
+2026-02-11 03:14:08,709 - INFO -   Columns: time, open_M15, high_M15, low_M15, close_M15, tick_volume_M15, spread_M15, real_volume_M15, open_H1, high_H1...
+2026-02-11 03:14:08,711 - INFO - ------------------------------------------------------------
+2026-02-11 03:14:08,937 - INFO - [SAVED] processed_data\XAUUSD.s_M15_aligned.parquet (3.38 MB)
+2026-02-11 03:14:09,059 - INFO - [SAVED] processed_data\XAUUSD.s_H1_aligned.parquet (1.03 MB)
+2026-02-11 03:14:09,197 - INFO - [SAVED] processed_data\XAUUSD.s_H4_aligned.parquet (0.28 MB)
+2026-02-11 03:14:10,160 - INFO - [SAVED] processed_data\XAUUSD.s_COMBINED.parquet (5.18 MB)
+2026-02-11 03:14:10,213 - INFO - ============================================================
+2026-02-11 03:14:10,222 - INFO - SUMMARY
+2026-02-11 03:14:10,223 - INFO - ============================================================
+2026-02-11 03:14:10,408 - INFO - RAW DATA (data/):
+2026-02-11 03:14:10,522 - INFO -   H4  : 15,438 bars, 9.99 years
+2026-02-11 03:14:10,530 - INFO -   H1  : 60,210 bars, 9.99 years
+2026-02-11 03:14:10,535 - INFO -   M15 : 99,992 bars, 4.23 years
+2026-02-11 03:14:10,536 - INFO - 
+PROCESSED DATA (processed_data/):
+2026-02-11 03:14:10,653 - INFO -   M15 (aligned): 99,992 bars
+2026-02-11 03:14:10,877 - INFO -   H1  (aligned): 25,192 bars
+2026-02-11 03:14:11,054 - INFO -   H4  (aligned): 6,536 bars
+2026-02-11 03:14:11,055 - INFO -   COMBINED: 99,992 rows x 22 columns
+2026-02-11 03:14:11,056 - INFO - ============================================================
+2026-02-11 03:14:11,057 - INFO - Multi-timeframe dataset ready for AI training!
+2026-02-11 03:14:11,057 - INFO - ============================================================
+2026-02-11 03:14:11,058 - INFO - MT5 connection closed
+2026-02-11 03:14:11,059 - INFO - Script execution completed
