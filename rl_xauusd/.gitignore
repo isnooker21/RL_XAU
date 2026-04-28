@@ -1,7 +1,9 @@
-# V12 training outputs (large / reproducible locally)
+# Training / export artifacts (regenerated locally; not versioned)
+*.zip
+__pycache__/
+
+# V12-specific outputs
 v12_tb/
-v12_run*.zip
 v12_run*_ckpt/
 v12_train*.log
 v12_eval*.log
-v12_smoke_train.zip
